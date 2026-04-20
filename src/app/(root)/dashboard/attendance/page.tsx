@@ -95,7 +95,11 @@ export default function Attendance(): React.ReactElement {
         greeting={{
           role: user?.role ?? "Admin",
           nameUser: capitalizeWords(user?.name ?? "User"),
-          description: dataSettings?.data.data.mobile_settings.conclusion_apps,
+          // mobile_settings may be undefined if the settings API hasn't returned the
+          // expected shape yet.  Guard against that to avoid runtime errors and provide
+          // a sensible default string.
+          description:
+            dataSettings?.data?.mobile_settings?.conclusion_apps ?? "",
         }}
       />
 

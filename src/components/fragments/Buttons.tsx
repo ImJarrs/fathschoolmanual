@@ -18,11 +18,11 @@ import React from "react";
 export const Buttons = () => {
   const { data } = useGetSettings();
   const { isDarkMode: isTheme, toggleDarkMode: toggleTheme } = useTheme();
-  const url = `https://api.whatsapp.com/send?phone=${data?.data.data?.app_phone ?? "6281321828144"}&text=Hallo%20Admin`;
-  
-  const clock = data?.data.data.time_settings
-  const ClockMasuk = clock?.time_in
-  const ClockPulang = clock?.time_out
+  const url = `https://api.whatsapp.com/send?phone=${data?.data?.app_phone ?? "6281321828144"}&text=Hallo%20Admin`;
+
+  const clock = data?.data.time_settings;
+  const ClockMasuk = clock?.time_in;
+  const ClockPulang = clock?.time_out;
 
   return (
     <>
